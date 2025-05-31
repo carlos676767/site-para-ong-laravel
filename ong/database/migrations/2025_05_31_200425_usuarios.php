@@ -18,7 +18,7 @@ return new class extends Migration
                 email VARCHAR(150) NOT NULL UNIQUE,
                 senha VARCHAR(255) NOT NULL,
                 telefone VARCHAR(20),
-                role ENUM('user', 'voluntario', 'adm', 'editor') DEFAULT 'user',
+                role ENUM('user', 'voluntario', 'adm') DEFAULT 'user',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             )
