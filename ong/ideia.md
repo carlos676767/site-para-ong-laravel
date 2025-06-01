@@ -1,4 +1,4 @@
-Claro! Vou te passar um **plano completo e detalhado** para o projeto do site para ONG, incluindo backend, frontend, principais funcionalidades, tecnologias e fluxo geral. Assim você terá uma visão clara para construir de ponta a ponta com Laravel.
+
 
 ---
 
@@ -64,7 +64,7 @@ Criar uma plataforma web completa para ONGs pequenas e médias, que permita:
 ### 3.6. Gestão de Doações
 
 * Visualizar todas as doações com filtros (data, valor)
-* Status das doações (pendente, confirmada, cancelada)
+* Status das doações (pendente, confirmada, cancelada)v
 * Exportar relatórios financeiros em CSV/Excel
 
 ### 3.7. Configuração de Pagamentos
@@ -183,92 +183,4 @@ Claro! Vou te passar uma ideia bem organizada da estrutura do banco de dados par
 # Estrutura do Banco de Dados (Modelo Relacional)
 
 ---
-
-## Tabelas principais
-
-| Tabela       | Descrição                                  |
-| ------------ | ------------------------------------------ |
-| `users`      | Usuários do sistema (admins, editores)     |
-| `ongs`       | Dados institucionais da ONG                |
-| `projects`   | Projetos e campanhas da ONG                |
-| `news`       | Notícias e posts do blog                   |
-| `volunteers` | Cadastro dos voluntários inscritos         |
-| `donations`  | Registro das doações feitas                |
-| `media`      | Arquivos de mídia (fotos, vídeos)          |
-| `roles`      | Papéis de usuário (admin, editor)          |
-| `role_user`  | Pivot table para relação usuários e papéis |
-
----
-
-## Descrição das tabelas e principais campos
-
-
-
-
-
-
-### 3. `projects`
-
-| Campo       | Tipo        | Observação             |
-| ----------- | ----------- | ---------------------- |
-| id          | bigint (PK) |                        |
-| ong\_id     | bigint (FK) | Referência para ONG    |
-| title       | string      | Nome do projeto        |
-| description | text        | Detalhes do projeto    |
-| status      | enum        | ('ativo', 'concluído') |
-| start\_date | date        |                        |
-| end\_date   | date        | nullable               |
-| created\_at | timestamp   |                        |
-| updated\_at | timestamp   |                        |
-
-### 4. `news`
-
-| Campo         | Tipo        | Observação |
-| ------------- | ----------- | ---------- |
-| id            | bigint (PK) |            |
-| ong\_id       | bigint (FK) |            |
-| title         | string      |            |
-| content       | text        |            |
-| published\_at | timestamp   | nullable   |
-| created\_at   | timestamp   |            |
-| updated\_at   | timestamp   |            |
-
-### 5. `volunteers`
-
-| Campo       | Tipo        | Observação    |
-| ----------- | ----------- | ------------- |
-| id          | bigint (PK) |               |
-| ong\_id     | bigint (FK) |               |
-| name        | string      |               |
-| email       | string      |               |
-| phone       | string      |               |
-| approved    | boolean     | default false |
-| created\_at | timestamp   |               |
-| updated\_at | timestamp   |               |
-
-
-
-### 7. `media`
-
-| Campo       | Tipo        | Observação         |
-| ----------- | ----------- | ------------------ |
-| id          | bigint (PK) |                    |
-| ong\_id     | bigint (FK) |                    |
-| project\_id | bigint (FK) | nullable           |
-| type        | string      | 'image' ou 'video' |
-| file\_path  | string      | Caminho do arquivo |
-| description | string      | nullable           |
-| created\_at | timestamp   |                    |
-| updated\_at | timestamp   |                    |
-
-### 8. `roles`
-
-| Campo       | Tipo        | Observação            |
-| ----------- | ----------- | --------------------- |
-| id          | bigint (PK) |                       |
-| name        | string      | ex: 'admin', 'editor' |
-| created\_at | timestamp   |                       |
-| updated\_at | timestamp   |                       |
-
-
 
